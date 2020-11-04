@@ -149,6 +149,7 @@ def check_win():
       
 def drawXO(row, col): 
     global board, XO 
+    print("Call drawXO")
       
     # for the first row, the image 
     # should be pasted at a x coordinate 
@@ -224,6 +225,7 @@ def user_click():
       
     else: 
         row = None
+    print(col,row)
         
     # after getting the row and col,  
     # we need to draw the images at 
@@ -246,10 +248,12 @@ game_initiating_window()
    
 while(True): 
     for event in pg.event.get(): 
+        print(MOUSEBUTTONDOWN);
         if event.type == QUIT: 
             pg.quit() 
             sys.exit() 
-        elif event.type is MOUSEBUTTONDOWN: 
+        elif event.type == MOUSEBUTTONDOWN:
+            print("Clicked!!!!") 
             user_click() 
             if(winner or draw): 
                 reset_game() 
