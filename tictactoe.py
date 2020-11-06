@@ -72,7 +72,7 @@ def game_initiating_window():
     pg.display.update() 
     time.sleep(3)                     
     #screen.fill(white) 
-    screen.blit(initiating_window, (0, 0)) 
+    #screen.blit(initiating_window, (0, 0)) 
     # drawing vertical lines 
     pg.draw.line(screen, line_color, (width / 3, 0), (width / 3, height), 7) 
     pg.draw.line(screen, line_color, (width / 3 * 2, 0), (width / 3 * 2, height), 7) 
