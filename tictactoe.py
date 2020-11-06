@@ -54,7 +54,7 @@ screen = pg.display.set_mode((width, height + 100), 0, 32)
 pg.display.set_caption("My Tic Tac Toe") 
    
 # loading the images as python object 
-initiating_window = pg.image.load("modified_cover.png") 
+initiating_window = pg.image.load("testpic1.png") 
 x_img = pg.image.load("X_modified.png") 
 y_img = pg.image.load("o_modified.png") 
    
@@ -71,8 +71,8 @@ def game_initiating_window():
     # updating the display 
     pg.display.update() 
     time.sleep(3)                     
-    screen.fill(white) 
-   
+    #screen.fill(white) 
+    screen.blit(initiating_window, (0, 0)) 
     # drawing vertical lines 
     pg.draw.line(screen, line_color, (width / 3, 0), (width / 3, height), 7) 
     pg.draw.line(screen, line_color, (width / 3 * 2, 0), (width / 3 * 2, height), 7) 
@@ -149,7 +149,6 @@ def check_win():
       
 def drawXO(row, col): 
     global board, XO 
-    print("Call drawXO")
       
     # for the first row, the image 
     # should be pasted at a x coordinate 
@@ -248,12 +247,10 @@ game_initiating_window()
    
 while(True): 
     for event in pg.event.get(): 
-        print(MOUSEBUTTONDOWN);
         if event.type == QUIT: 
             pg.quit() 
             sys.exit() 
         elif event.type == MOUSEBUTTONDOWN:
-            print("Clicked!!!!") 
             user_click() 
             if(winner or draw): 
                 reset_game() 
