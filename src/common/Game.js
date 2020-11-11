@@ -186,6 +186,16 @@ export default class Game extends GameEngine {
     //
     // /////////////////////////////////////////////////////////
     clientSideInit() {
+        this.controls = new KeyboardControls(this.renderer.clientEngine);
+        this.controls.bindKey('1', '0', { repeat: false } );
+        this.controls.bindKey('2', '1', { repeat: false } );
+        this.controls.bindKey('3', '2', { repeat: false } );
+        this.controls.bindKey('4', '3', { repeat: false } );
+        this.controls.bindKey('5', '4', { repeat: false } );
+        this.controls.bindKey('6', '5', { repeat: false } );
+        this.controls.bindKey('7', '6', { repeat: false } );
+        this.controls.bindKey('8', '7', { repeat: false } );
+        this.controls.bindKey('9', '8', { repeat: false } );
         document.getElementsByClassName('square1').addEventListener("click", changeState('square1'));
         document.getElementsByClassName('square2').addEventListener("click", changeState('square2'));
         document.getElementsByClassName('square3').addEventListener("click", changeState('square3'));
